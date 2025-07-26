@@ -1,0 +1,114 @@
+/* Contenedor principal */
+.auth-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fondo con carrusel de imágenes */
+.auth-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  filter: brightness(0.6);
+}
+
+/* Contenedor de contenido */
+.auth-content {
+  position: relative;
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección izquierda (Título y slogan) */
+.auth-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.auth-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  
+}
+
+.auth-slogan {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Sección derecha (Formulario) */
+.auth-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(202, 202, 202, 0.555);
+  padding: 2rem;
+}
+
+/* Tarjeta de autenticación */
+.auth-card {
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Inputs */
+.auth-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+}
+
+/* Botón */
+.auth-button {
+  background-color: #000000;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.auth-button:hover {
+  background-color: #70bee2;
+}
+
+/* Enlace */
+.auth-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}

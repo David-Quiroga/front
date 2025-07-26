@@ -1,0 +1,34 @@
+/* Forzar misma altura a todas las tarjetas */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hacer que card-body crezca y empuje los botones al final */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Empujar los botones abajo */
+.card-body .d-flex.gap-2 {
+  margin-top: auto;
+}
+
+.icon-circle {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-warning.text-dark {
+  background-color: #ff7f50; /* coral */
+  border-color: #ff7f50;
+}
+
+.btn-warning.text-dark:hover {
+  background-color: #ff6347;
+  border-color: #ff6347;
+  size: 10px;
+}

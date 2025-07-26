@@ -1,0 +1,281 @@
+/* Estilo minimalista mejorado para el layout */
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* ======== SIDEBAR ======== */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #262c41; /* Coral Orange - a warm and inviting base */
+  position: fixed;
+  top: 0;
+  left: -220px;
+  padding: 10px 0;
+  box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  z-index: 5;
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+/* When the Sidebar is open */
+
+.sidebar-brand {
+  font-family: 'Poppins', sans-serif; /* O la que prefieras */
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFDAB9; /* Un color claro y amigable */
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 20px 0;
+  user-select: none;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu items */
+.sidebar ul li {
+  position: relative; /* Needed for the underline effect */
+  padding: 12px 20px;
+  margin-bottom: 5px;
+  border-left: 5px solid transparent;
+  transition: background-color 0.3s ease, border-left-color 0.3s ease, transform 0.1s ease-out; /* Added transform for click effect */
+  overflow: hidden; /* Hide the overflow of the pseudo-element underline */
+}
+
+/* Underline effect for menu items */
+.sidebar ul li::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Starts hidden */
+  height: 3px; /* Thickness of the underline */
+  background-color: #FFDAB9; /* Peach color for the underline */
+  transition: width 0.3s ease-out; /* Animate width on hover/active */
+}
+
+.sidebar ul li a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Ensures text is above pseudo-element */
+  z-index: 1; /* Keep text above the underline effect */
+}
+
+/* Hover on menu links */
+.sidebar ul li:not(.sidebar-brand):hover {
+  background-color: #FF9966;
+  border-left-color: #FFDAB9;
+}
+
+/* Hover underline effect */
+.sidebar ul li:hover::before {
+  width: 100%; /* Expands to full width on hover */
+}
+
+/* Active menu item (example class - you'd need to add this dynamically with JS) */
+.sidebar ul li.active {
+  background-color: #FF6347;
+  border-left-color: #FFDAB9;
+}
+
+.sidebar ul li.active a {
+  font-weight: 700;
+}
+
+/* Active underline effect */
+.sidebar ul li.active::before {
+  width: 100%; /* Stays full width when active */
+  background-color: #FFF; /* White for active underline, more prominent */
+}
+
+/* NEW: Click/Press effect */
+.sidebar ul li.clicked {
+  transform: scale(0.98); /* Slight press effect */
+  background-color: #FF5733; /* Even deeper orange on click */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Inner shadow for pressed look */
+  border-left-color: #FFF; /* Stronger border for clicked state */
+}
+.sidebar ul li.clicked a {
+  color: #FFF; /* Ensure text remains white */
+}
+/* Ensure the underline stays on click */
+.sidebar ul li.clicked::before {
+    width: 100%;
+    background-color: #FFF;
+}
+
+
+/* Submenus */
+.sub-menu {
+  padding-left: 20px;
+  display: none;
+  background-color: rgba(255, 127, 80, 0.8);
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.sub-menu.open {
+  display: block;
+}
+
+/* Adjustments for dropdown submenus */
+.sub-menu li {
+  position: relative; /* Needed for its own underline effect */
+  padding: 10px 15px;
+  font-size: 0.9em;
+  border-left: 3px solid transparent;
+  transition: background-color 0.3s ease, border-left-color 0.3s ease, transform 0.1s ease-out; /* Added transform */
+  overflow: hidden;
+}
+
+/* Underline effect for sub-menu items */
+.sub-menu li::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thinner underline for sub-menus */
+  background-color: #FFF;
+  transition: width 0.3s ease-out;
+}
+
+.sub-menu li a {
+  color: #FFF;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect for sub-menu items */
+.sub-menu li:hover {
+  background-color: #FFA07A;
+  border-left-color: #FFF;
+}
+
+.sub-menu li:hover::before {
+  width: 100%;
+}
+
+/* NEW: Click/Press effect for sub-menu items */
+.sub-menu li.clicked {
+  transform: scale(0.98);
+  background-color: #FF8C00; /* Darker orange for sub-menu click */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left-color: #FFF;
+}
+.sub-menu li.clicked::before {
+    width: 100%;
+    background-color: #FFDAB9; /* Different underline color on sub-menu click */
+}
+
+
+.sub-sub-menu {
+  padding-left: 15px;
+  display: none;
+  background-color: rgba(255, 160, 122, 0.9);
+  border-radius: 3px;
+  margin-top: 3px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Show sub-sub-menu when activated */
+.sub-sub-menu.open {
+  display: block;
+}
+
+/* Hover effect for sub-sub-menu items */
+.sub-sub-menu li:hover {
+  background-color: #FFC0CB;
+  cursor: pointer;
+}
+
+/* ======== MAIN CONTENT ======== */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  background-color: #fcfcfc;
+  min-height: calc(100vh);
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adjust content when sidebar is closed (responsive) */
+.content.full-width {
+  margin-left: 0;
+}
+
+
+/* ======== RESPONSIVE SIDEBAR ======== */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -220px;
+    height: 100vh;
+    top: 0;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* When sidebar is closed on mobile, content takes full width */
+  .content {
+    margin-left: 0;
+  }
+
+  .sidebar ul li {
+    padding: 10px 15px;
+  }
+
+  .sidebar ul li a {
+    font-size: 14px;
+  }
+}
+
+/* ======== LOGOUT SECTION ======== */
+.logout {
+  position: sticky;
+  bottom: 0;
+  background-color: #FF7F50;
+  width: 100%;
+  padding: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout div:hover {
+  background-color: #FF6347;
+}
+
+/* Icon style */
+.logout svg {
+  font-size: 20px;
+  color: #FFF;
+}

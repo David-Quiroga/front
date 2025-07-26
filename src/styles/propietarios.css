@@ -1,0 +1,182 @@
+/* Estilos generales */
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.restaurantes-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.restaurantes-titleytext-center {
+  color: #2E7D32;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Grid de veterinarias */
+.veterinarias-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px;
+  align-items: stretch;
+}
+
+/* Tarjeta de veterinaria */
+.veterinaria-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 350px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E0E0E0;
+  transition: transform 0.3s ease;
+}
+
+.veterinaria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Encabezado de tarjeta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  color: #2E7D32;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rating {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Información de contacto */
+.contact-info {
+  margin-bottom: 12px;
+}
+
+.contact-info p {
+  color: #616161;
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.address {
+  font-weight: 500;
+}
+
+/* Horario */
+.schedule {
+  color: #616161;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Servicios */
+.services-section {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.services-title {
+  color: #2E7D32;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-tag {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Divisor */
+.divider {
+  height: 1px;
+  background-color: #E0E0E0;
+  margin: 15px 0;
+  width: 100%;
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn-warning {
+  background-color: #FFC107;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #DC3545;
+  color: #FFF;
+}
+
+.btn-info {
+  background-color: #17A2B8;
+  color: #FFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .veterinarias-grid {
+    justify-content: center;
+  }
+  
+  .veterinaria-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

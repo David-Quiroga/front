@@ -1,0 +1,21 @@
+
+@media screen and (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  
+  .d-flex {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+}
+
